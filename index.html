@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Application Selection Screen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="4">
+    <link rel="icon" type="image/png" href="favicon.jpeg">
+	<link rel="stylesheet" href="style.css">
+    <style>
+        .game-description {
+            opacity: 0;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #333;
+            transition: all 0.3s;
+            z-index: 1;
+        }
+
+        button {
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #aaa;
+            color: #111;
+            transform: scale(1.05);
+        }
+
+        button:hover + .game-description {
+            opacity: 1;
+        }
+
+        body {
+            animation: bg-animation 10s infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes bg-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #last-played {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+      
+div[class*=box] {
+  height: 33.33%;
+  width: 15%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-1 { background-color: #000; }
+
+.btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+}
+
+/* 
+========================
+      BUTTON ONE
+========================
+*/
+.btn-one {
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+}
+.btn-one span {
+  transition: all 0.3s;
+}
+.btn-one::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255,255,255,0.5);
+  border-bottom-color: rgba(255,255,255,0.5);
+  transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+  letter-spacing: 2px;
+}
+.btn-one:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.btn-one::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-one:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
+}
+      .rainbow-text {
+        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+    </style>
+
+
+  
+</head>
+<body>
+	<header>
+		<h1><font color=white><u>Choose a application to used:</u></h1>
+	</header>
+    <section id="last-played">
+        <h2>Last Used: <span id="last-played-game">Nothing</span></h2>
+    </section>
+	<section class="game-selection">
+		<button onclick="loadSnakeGame()">Snake Game 🐍</button>
+        <div class="game-description">
+            In Snake Game, guide the snake to eat food while avoiding collisions with the walls or its own body. The more food you eat, the longer the snake grows, and the higher your score!
+
+          Credit: Potato6966
+        </div>
+		<button onclick="loadMoneyTycoonGame()">Money Tycoon Game 💰</button>
+        <div class="game-description">
+            In Money Tycoon, build your empire by earning money through clicking, investing in businesses, and increasing your passive income. Unlock achievements and prestige to multiply your earnings!
+
+          Credit: Potato6966
+        </div>
+		<button onclick="loadPaintingGame()">Painting Game 🎨</button>
+        <div class="game-description">
+            In Painting Game, paint the canvas by dragging your mouse across the screen. Its simple really, but you can create some pretty cool art!
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadBreakoutGame()">Breakout Game 🧱</button>
+        <div class="game-description">
+            In Breakout Game, there will be a layer of bricks lines the top third of the screen and the goal is to destroy them all by repeatedly bouncing a ball off a paddle into them.
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadHangmanGame()">Hang Man Game 🚶‍♂️</button>
+        <div class="game-description"> 
+a game for two in which one player tries to guess the letters of a word, the other player recording failed attempts by drawing a gallows and someone hanging on it, line by line.
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadMusicApp()">Music Player 🎶</button>
+        <div class="game-description"> 
+Another significant part of such music app features is the regular updating process of the music library, artists, and playlists based on user feedback and market trends. Both browsing and music arrangement are among the key moments to impress your potential customers. 6. The Sixth Point Among Music App Features: Recommendations
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadWordleGame()">Wordle Game ❓</button>
+        <div class="game-description"> 
+Wordle is a web-based word game created and developed by Welsh software engineer Josh Wardle. It was bought by the New York Times Company in 2022, who has since maintained and published it.
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadCryptoApp()">Crypto Price 🤑</button>
+        <div class="game-description"> 
+The word “crypto” in cryptocurrency refers to the special system of encrypting and decrypting information – known as cryptography – which is used to secure all transactions sent between users.
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadPacManApp()">PacMan 👻</button>
+        <div class="game-description"> 
+Pac-Man is an action maze chase video game; the player controls the eponymous character through an enclosed maze. The objective of the game is to eat all of the dots placed in the maze while avoiding four colored ghosts — Blinky (red), Pinky (pink), Inky (cyan), and Clyde (orange) — that pursue Pac-Man.
+
+          Credit: Potato6966
+        </div>
+		<button onclick="loadChatGPT()">ChatGPT 🤖</button>
+        <div class="game-description">
+            ChatGPT is an AI chatbot that uses natural language processing to create humanlike conversational dialogue. The language model can respond to questions and compose various written content, including articles, social media posts, essays, code and emails.
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadPongGame()">Pong Game 🏓</button>
+        <div class="game-description">
+            Pong is a two-dimensional sports game that simulates table tennis. The player controls an in-game paddle by moving it vertically across the left or right side of the screen. They can compete against another player controlling a second paddle on the opposing side. Players use the paddles to hit a ball back and forth.
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadWeatherapp()">Weather app ☁</button>
+        <div class="game-description">
+            Weather forecast app provides detailed local forecast & weather forecast world wide, the app provides the current temperature in Celsius and Fahrenheit, sunrise and sunset time according to city time zone.
+
+          Credit: Potato6966
+        </div>
+        </div>
+    <button onclick="loadBulleyeGame()">Bulleye Game 🏹</button>
+        <div class="game-description">
+            A game where you shoot the arrow to the target to win a point!
+
+          Credit: Potato6966
+        </div>
+        </div>
+    <button onclick="loadHighwayGame()">Highway Race 🚗</button>
+        <div class="game-description">
+            A game where you going very fast in road and you have you to move a way the car in the road.
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadMenjaGame()">Menja Game ⬜</button>
+        <div class="game-description">
+            Menja is a game where you cut the block for more xp!
+
+          Credit: Potato6966
+        </div>
+    <button onclick="loadFlappyBird()">Flappy Bird 🐦</button>
+    <div class="game-description">
+      Flappy Bird is a mobile game developed by the Vietnamese video game artist and programmer Dong Nguyen, under his game development company .Gears. The game is a side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.
+
+      Credit: Potato6966
+    </div>
+    <button onclick = "window.location.href='https://1v1.potatofam.com';">1v1 Shooting Game 🔫</button>
+    <div class="game-description"> 
+1v1 is a fast-paced online shooting game where it's possible to build structures and eliminate opponents.
+
+      Credit: Potato6966
+        </div>
+    <button onclick = "window.location.href='https://solarsystem.potatofam.com';">The Solar System 💀🌍</button>
+    <div class="game-description"> 
+the collection of eight planets and their moons in orbit round the sun, together with smaller bodies in the form of asteroids, meteoroids, and comets. The planets of the solar system are (in order of distance from the sun) Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.
+
+      Credit: Potato6966
+        </div>
+    <button onclick = "window.location.href='https://subwaysurf.potatofam.com';">Subway Surfer (99.9% Real) 💀🏃‍♂️</button>
+    <div class="game-description"> 
+Subway Surfers is a single player mobile gaming app and website developed by Kiloo. The aim of the game is to outrun a train inspector while dodging oncoming trains, barriers and other objects. Collecting coins on the way gives players advantages such as hover boards and high scores.
+
+      Credit: Potato6966
+        </div>
+    <button onclick = "window.location.href='https://gdash.potatofam.com';">Geometry Dash (99.9% Real) 💀😐</button>
+    <div class="game-description"> 
+Geometry Dash is a series of music platforming video games developed by Swedish developer Robert "RobTop" Topala. The game was released on 13 August 2013 on iOS and Android, and the Steam version on 22 December 2014. In Geometry Dash, players control the movement of an icon and navigate along music-based levels, while avoiding obstacles such as spikes that instantly destroy the icon on impact.<br> Credit: Potato6966
+        </div>
+    <button onclick = "window.location.href='https://chess.potatofam.com';">Chess Game ♟</button>
+    <div class="game-description"> 
+Chess is one of the oldest and most popular board games. It is played by two opponents on a checkered board with specially designed pieces of contrasting colours, commonly white and black. The objective of the game is to capture the opponent's king.
+
+      Credit: Potato6966
+        </div>
+      <button onclick = "window.location.href='https://slope.potatofam.com';">Slope Game (99.9% Real)💀🧶</button>
+    <div class="game-description"> 
+Slope Run Game is a 3D running game with perfect controls, breath-taking speeds, and an addictive gameplay. If you're looking for a game to relax then Slope Ball Game is designed for you! Eye-catching and stunning graphics. Rapidly changing courses.
+
+      Credit: Potato6966 & Usif6966
+        </div>
+    <button onclick = "window.location.href='https://minecraft.sylanio.com';">Minecraft Game (99.9% Real) 💀🟫</button>
+    <div class="game-description"> 
+Minecraft is a sandbox video game that uses blocks to represent the world and its components; you can think of it a lot like virtual Legos. It was created in 2009 by the programmer Notch from the Mojang company.
+
+      Credit: Potato6966 & Usif6966
+        </div>
+    <div class="center">
+      <div class="outer button">
+        <button>Made by ItzSylanio (AQ)</button>
+        <span></span>
+        <span></span>
+</div>
+      <h1 class="rainbow-text">Why are u playing?</h1>
+	</section>
+
+  <button>Check Update</button>
+  <div class="game-description">
+    News:<br>Working on a new game!
+  </div>
+
+	<script>
+        const lastPlayedGame = localStorage.getItem("lastPlayed");
+        if (lastPlayedGame) {
+            document.getElementById("last-played-game").textContent = lastPlayedGame;
+            document.getElementById("play-again").disabled = false;
+        }
+
+    function loadWeatherapp() {
+            localStorage.setItem("lastPlayed", "Weather App");
+			window.location.href = "Weather/index.html";
+		}
+
+    function loadChatGPT() {
+            localStorage.setItem("lastPlayed", "ChatGPT");
+			window.location.href = "ChatGPT/index.html";
+		}
+    
+    function loadSpotifyApp() {
+            localStorage.setItem("lastPlayed", "Spotify Clone");
+			window.location.href = "Spotify Clone/index.html";
+		}
+
+    function loadPongGame() {
+      localStorage.setItem("lastPlayed", "Pong Game");
+			window.location.href = "Pong Game/index.html";
+    }
+    
+    function loadFlappyBird() {
+      localStorage.setItem("lastPlayed", "Flappy Bird Game");
+      window.location.href = "Flappy Bird/index.html";
+    }
+
+    function loadBulleyeGame() {
+      localStorage.setItem("lastPlayed", "Bulleye Game");
+			window.location.href = "Bulleye Game/index.html";
+    }
+
+    function loadHighwayGame() {
+      localStorage.setItem("lastPlayed", "Highway Game");
+			window.location.href = "Highway Race/index.html";
+    }
+
+    function loadMenjaGame() {
+      localStorage.setItem("lastPlayed", "Menja Game");
+			window.location.href = "Menja/index.html";
+    }
+
+    function loadWordleGame() {
+            localStorage.setItem("lastPlayed", "Wordle Game");
+			window.location.href = "Wordle/index.html";
+		}
+    
+    function loadMusicApp() {
+            localStorage.setItem("lastPlayed", "Music Player");
+			window.location.href = "Music App/MusicApp.html";
+		}
+
+    function loadPacManApp() {
+            localStorage.setItem("lastPlayed", "PacMan");
+			window.location.href = "PacMan/index.html";
+		}
+
+    function loadCryptoApp() {
+            localStorage.setItem("lastPlayed", "Crypto Price App");
+			window.location.href = "Crypto Price/CryptoApp.html";
+		}
+    
+		function loadSnakeGame() {
+            localStorage.setItem("lastPlayed", "Snake Game");
+			window.location.href = "Snake Game/SnakeGame.html";
+		}
+
+    function loadHangmanGame() {
+            localStorage.setItem("lastPlayed", "Hangman Game");
+			window.location.href = "Hangman Game/WordleGame.html";
+		}
+    
+    function loadBreakoutGame() {
+            localStorage.setItem("lastPlayed", "Breakout Game");
+			window.location.href = "Breakout Game/BreakoutGame.html";
+		}
+
+		function loadMoneyTycoonGame() {
+            localStorage.setItem("lastPlayed", "Money Tycoon Game");
+			window.location.href = "Money Tycoon Game/MoneyTycoonGame.html";
+		}
+
+		function loadPaintingGame() {
+            localStorage.setItem("lastPlayed", "Painting Game");
+			window.location.href = "Painting Game/PaintingGame.html";
+		}
+
+
+	</script>
+  
+</body>
+</html>
